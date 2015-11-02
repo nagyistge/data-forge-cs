@@ -44,7 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IColumn.cs" />
+    <Compile Include="IDataFormatPlugin.cs" />
     <Compile Include="IDataFrame.cs" />
+    <Compile Include="IDataFrameLoader.cs" />
+    <Compile Include="IDataSourcePlugin.cs" />
+    <Compile Include="Pancas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
