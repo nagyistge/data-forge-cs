@@ -35,6 +35,10 @@
       <HintPath>..\packages\NetLegacySupport.Tuple.1.0.2\lib\net35\NetLegacySupport.Tuple.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RSG.Promise, Version=1.1.7.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RSG.Promise.1.1.7.0\lib\net35\RSG.Promise.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,7 +50,8 @@
     <Compile Include="IColumn.cs" />
     <Compile Include="IDataFormatPlugin.cs" />
     <Compile Include="IDataFrame.cs" />
-    <Compile Include="IDataFrameLoader.cs" />
+    <Compile Include="IDataFrameDeserializer.cs" />
+    <Compile Include="IDataFrameSerializer.cs" />
     <Compile Include="IDataSourcePlugin.cs" />
     <Compile Include="Pancas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

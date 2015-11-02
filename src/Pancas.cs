@@ -7,7 +7,7 @@ namespace Pancas
 {
     public static class Pancas
     {
-        public static IDataFrameLoader From(IDataSourcePlugin dataSourcePlugin)
+        public static IDataFrameDeserializer From(IDataSourcePlugin dataSourcePlugin)
         {
             throw new NotImplementedException();
         }

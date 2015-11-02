@@ -15,5 +15,7 @@ namespace Pancas
 
         IColumn<T> Column<T>(string columnName);
         IColumn<T> Column<T>(int columnIndex);
+
+        IDataFrameSerializer As(IDataFormatPlugin dataFormatPlugin);
     }
 }
