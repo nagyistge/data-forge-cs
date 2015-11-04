@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pancas", "src\Pancas.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{7E125B64-55B9-48F0-BCFC-9156110C53C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. plot", "examples\1. plot\1. plot.csproj", "{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7E125B64-55B9-48F0-BCFC-9156110C53C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E125B64-55B9-48F0-BCFC-9156110C53C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E125B64-55B9-48F0-BCFC-9156110C53C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

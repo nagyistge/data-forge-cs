@@ -5,10 +5,16 @@ using System.Text;
 
 namespace Pancas
 {
-    public interface IColumn<T>
+    public interface IColumn
     {
-        string Name { get; }
+        /// <summary>
+        /// Get the name of the column.
+        /// </summary>
+        string GetName();
 
-        IEnumerable<T> Values();
+        /// <summary>
+        /// Get the values of the column.
+        /// </summary>
+        IEnumerable<T> GetValues<T>();
     }
 }

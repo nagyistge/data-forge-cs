@@ -7,15 +7,17 @@ namespace Pancas
 {
     public interface IDataFrame
     {
-        IEnumerable<Tuple<T1>> Rows<T1>();
-        IEnumerable<Tuple<T1, T2>> Rows<T1, T2>();
-        IEnumerable<Tuple<T1, T2, T3>> Rows<T1, T2, T3>();
+        IEnumerable<Tuple<T1>> GetRows<T1>();
+        IEnumerable<Tuple<T1, T2>> GetRows<T1, T2>();
+        IEnumerable<Tuple<T1, T2, T3>> GetRows<T1, T2, T3>();
 
-        IEnumerable<string> Columns();
+        IEnumerable<string> GetColumnNames();
 
-        IColumn<T> Column<T>(string columnName);
-        IColumn<T> Column<T>(int columnIndex);
+        IColumn GetColumn(string columnName);
+        IColumn GetColumn(int columnIndex);
 
         IDataFrameSerializer As(IDataFormatPlugin dataFormatPlugin);
+
+        IEnumerable<IColumn> GetColumns();
     }
 }
