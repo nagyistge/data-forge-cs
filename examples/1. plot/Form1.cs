@@ -72,7 +72,9 @@ namespace _1.plot
                 {
                     series.Points.AddXY(entry.index, entry.value);
                 }
-            }
+
+                chart1.Series.Add(series);
+            }            
         }
     }
 }

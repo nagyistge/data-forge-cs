@@ -38,10 +38,6 @@
       <HintPath>..\packages\Moq.4.2.1510.2205\lib\net35\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NetLegacySupport.Tuple, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NetLegacySupport.Tuple.1.0.2\lib\net35\NetLegacySupport.Tuple.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="RSG.Promise, Version=1.1.7.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RSG.Promise.1.1.7.0\lib\net35\RSG.Promise.dll</HintPath>
       <Private>True</Private>

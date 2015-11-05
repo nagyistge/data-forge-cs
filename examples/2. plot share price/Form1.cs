@@ -29,38 +29,24 @@ namespace _1.plot
                 .As(new Pancas.DataFormat.Csv())
                 .Then(dataFrame =>
                 {
-                    Plot("Date", dataFrame);
+                    Plot("Date", "Close", dataFrame);
                 });
         }
 
         /// <summary>
         /// Helper function for plotting.
         /// </summary>
-        private void Plot(string indexColumnName, IDataFrame dataFrame)
+        private void Plot(string yAxisColumnName, string xAxisColumnName, IDataFrame dataFrame)
         {
-            var indexValues = dataFrame.GetColumn(indexColumnName).GetValues<int>();
-            var remainingColumns = dataFrame.DropColumn("index").GetColumns();
+            var subset = dataFrame.Subset(new string[] { yAxisColumnName, xAxisColumnName });
 
-            var allSeriesData = remainingColumns
-                .Select(column =>
-                {
-                    var label = column.GetName();
-                    var entries = indexValues
-                        .Zip(column.GetValues<float>(), (index, value) => new { index, value })
-                        .ToArray();
-
-                    return new { label, entries };
-                })
-                .ToArray();
-
-            foreach (var seriesData in allSeriesData)
+            var series = new Series(xAxisColumnName);
+            foreach (var entry in subset.GetRows<DateTime, float>())
             {
-                var series = new Series(seriesData.label);
-                foreach (var entry in seriesData.entries)
-                {
-                    series.Points.AddXY(entry.index, entry.value);
-                }
+                series.Points.AddXY(entry.Item1, entry.Item2);
             }
+
+            this.chart1.Series.Add(series);
         }
     }
 }
