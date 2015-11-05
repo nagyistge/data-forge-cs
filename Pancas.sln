@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. plot", "examples\1. plot\1. plot.csproj", "{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{1B11A78A-0750-4F9E-8913-BE768801AB60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. plot share price", "examples\2. plot share price\2. plot share price.csproj", "{08C730CD-325C-4E2F-8C68-912422283B5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +31,16 @@ Global
 		{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08C730CD-325C-4E2F-8C68-912422283B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08C730CD-325C-4E2F-8C68-912422283B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08C730CD-325C-4E2F-8C68-912422283B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08C730CD-325C-4E2F-8C68-912422283B5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
+		{08C730CD-325C-4E2F-8C68-912422283B5D} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
 	EndGlobalSection
 EndGlobal

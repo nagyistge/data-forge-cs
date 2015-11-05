@@ -19,30 +19,18 @@ namespace _1.plot
             InitializeComponent();
         }
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
             chart1.Series.Clear();
 
-            // 
-            // Create a simple data frame.
-            //
-            var values = Enumerable.Range(0, 14)
-                .Select(i => new
+            Pancas.Pancas
+                .From(new Pancas.DataSource.File("share_prices.csv"))
+                .As(new Pancas.DataFormat.Csv())
+                .Then(dataFrame =>
                 {
-                    index = i,
-                    sin = Math.Sin(i),
-                    cos = Math.Cos(i)
-                })
-    		    .ToArray();
-
-            var indexColumnName = "index";
-            var columnNames = new string[] { indexColumnName, "Sin", "Cos" };
-            var dataFrame = new DataFrame(columnNames, values);
-
-            //
-            // Plot the data frame.
-            //
-            Plot(indexColumnName, dataFrame);           
+                    Plot("Date", dataFrame);
+                });
         }
 
         /// <summary>

@@ -19,5 +19,7 @@ namespace Pancas
         IDataFrameSerializer As(IDataFormatPlugin dataFormatPlugin);
 
         IEnumerable<IColumn> GetColumns();
+
+        IDataFrame DropColumn(string columnName);
     }
 }
