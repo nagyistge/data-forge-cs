@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{1B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. plot share price", "examples\3. plot share price\3. plot share price.csproj", "{08C730CD-325C-4E2F-8C68-912422283B5D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. plot - with dates", "examples\2. plot - with dates\2. plot - with dates.csproj", "{C70BB265-C29A-4BBC-A976-61745AB46EA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{08C730CD-325C-4E2F-8C68-912422283B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08C730CD-325C-4E2F-8C68-912422283B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08C730CD-325C-4E2F-8C68-912422283B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C70BB265-C29A-4BBC-A976-61745AB46EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C70BB265-C29A-4BBC-A976-61745AB46EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C70BB265-C29A-4BBC-A976-61745AB46EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C70BB265-C29A-4BBC-A976-61745AB46EA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,5 +48,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
 		{08C730CD-325C-4E2F-8C68-912422283B5D} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
+		{C70BB265-C29A-4BBC-A976-61745AB46EA1} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
 	EndGlobalSection
 EndGlobal
