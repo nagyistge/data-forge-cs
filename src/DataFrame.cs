@@ -61,7 +61,7 @@ namespace Pancas
             throw new NotImplementedException();
         }
 
-        public IDataFrame Subset(IEnumerable<string> columnNames)
+        public IDataFrame GetColumnsSubset(IEnumerable<string> columnNames)
         {
             throw new NotImplementedException();
         }

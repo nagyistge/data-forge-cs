@@ -21,6 +21,6 @@ namespace Pancas
         IEnumerable<IColumn> GetColumns();
 
         IDataFrame DropColumn(string columnName);
-        IDataFrame Subset(IEnumerable<string> columnNames);
+        IDataFrame GetColumnsSubset(IEnumerable<string> columnNames);
     }
 }

@@ -38,7 +38,7 @@ namespace _1.plot
         /// </summary>
         private void Plot(string yAxisColumnName, string xAxisColumnName, IDataFrame dataFrame)
         {
-            var subset = dataFrame.Subset(new string[] { yAxisColumnName, xAxisColumnName });
+            var subset = dataFrame.GetColumnsSubset(new string[] { yAxisColumnName, xAxisColumnName });
 
             var series = new Series(xAxisColumnName);
             foreach (var entry in subset.GetRows<DateTime, float>())
