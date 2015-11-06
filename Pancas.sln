@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. plot", "examples\1. plot
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "examples", "examples", "{1B11A78A-0750-4F9E-8913-BE768801AB60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. plot share price", "examples\2. plot share price\2. plot share price.csproj", "{08C730CD-325C-4E2F-8C68-912422283B5D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. plot share price", "examples\3. plot share price\3. plot share price.csproj", "{08C730CD-325C-4E2F-8C68-912422283B5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
