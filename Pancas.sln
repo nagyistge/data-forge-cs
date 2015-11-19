@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4. plot share price", "exam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. plot - with dates", "examples\3. plot - with dates\3. plot - with dates.csproj", "{C70BB265-C29A-4BBC-A976-61745AB46EA1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. display data frame - console", "examples\1. display data frame - console\1. display data frame - console.csproj", "{C79A819B-6E62-48EA-A9CB-C4033E781898}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{C70BB265-C29A-4BBC-A976-61745AB46EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C70BB265-C29A-4BBC-A976-61745AB46EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C70BB265-C29A-4BBC-A976-61745AB46EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C79A819B-6E62-48EA-A9CB-C4033E781898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C79A819B-6E62-48EA-A9CB-C4033E781898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C79A819B-6E62-48EA-A9CB-C4033E781898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C79A819B-6E62-48EA-A9CB-C4033E781898}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,5 +55,6 @@ Global
 		{FE7CBA42-FC53-41BC-A8BF-581FAAFA762B} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
 		{08C730CD-325C-4E2F-8C68-912422283B5D} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
 		{C70BB265-C29A-4BBC-A976-61745AB46EA1} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
+		{C79A819B-6E62-48EA-A9CB-C4033E781898} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
 	EndGlobalSection
 EndGlobal
