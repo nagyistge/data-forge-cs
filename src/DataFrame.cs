@@ -65,5 +65,10 @@ namespace Pancas
         {
             throw new NotImplementedException();
         }
+
+        public string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
