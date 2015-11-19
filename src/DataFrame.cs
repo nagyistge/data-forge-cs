@@ -46,17 +46,22 @@ namespace Pancas
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Tuple<T1>> GetRows<T1>()
+        public IEnumerable<Tuple<T1>> GetValues<T1>()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Tuple<T1, T2>> GetRows<T1, T2>()
+        public IEnumerable<Tuple<T1, T2>> GetValues<T1, T2>()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Tuple<T1, T2, T3>> GetRows<T1, T2, T3>()
+        public IEnumerable<Tuple<T1, T2, T3>> GetValues<T1, T2, T3>()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<IRow> GetRows()
         {
             throw new NotImplementedException();
         }
@@ -66,7 +71,12 @@ namespace Pancas
             throw new NotImplementedException();
         }
 
-        public string ToString()
+        public IDataFrame Where(Func<IRow, bool> rowPredicate)
+        {
+            throw new NotImplementedException();
+        }
+
+        new public string ToString()
         {
             throw new NotImplementedException();
         }

@@ -41,7 +41,7 @@ namespace _1.plot
             var subset = dataFrame.GetColumnsSubset(new string[] { yAxisColumnName, xAxisColumnName });
 
             var series = new Series(xAxisColumnName);
-            foreach (var entry in subset.GetRows<DateTime, float>())
+            foreach (var entry in subset.GetValues<DateTime, float>())
             {
                 series.Points.AddXY(entry.Item1, entry.Item2);
             }

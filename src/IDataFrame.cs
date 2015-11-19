@@ -7,9 +7,11 @@ namespace Pancas
 {
     public interface IDataFrame
     {
-        IEnumerable<Tuple<T1>> GetRows<T1>();
-        IEnumerable<Tuple<T1, T2>> GetRows<T1, T2>();
-        IEnumerable<Tuple<T1, T2, T3>> GetRows<T1, T2, T3>();
+        IEnumerable<Tuple<T1>> GetValues<T1>();
+        IEnumerable<Tuple<T1, T2>> GetValues<T1, T2>();
+        IEnumerable<Tuple<T1, T2, T3>> GetValues<T1, T2, T3>();
+
+        IEnumerable<IRow> GetRows();
 
         IEnumerable<string> GetColumnNames();
 
@@ -22,5 +24,7 @@ namespace Pancas
 
         IDataFrame DropColumn(string columnName);
         IDataFrame GetColumnsSubset(IEnumerable<string> columnNames);
+
+        IDataFrame Where(Func<IRow, bool> rowPredicate);
     }
 }

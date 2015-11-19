@@ -54,6 +54,7 @@
     <Compile Include="IDataFrameDeserializer.cs" />
     <Compile Include="IDataFrameSerializer.cs" />
     <Compile Include="IDataSourcePlugin.cs" />
+    <Compile Include="IRow.cs" />
     <Compile Include="Pancas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
