@@ -6,7 +6,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -27,11 +26,11 @@ namespace _1.plot
             // Create a simple data frame.
             //
             var values = Enumerable.Range(0, 14)
-                .Select(i => new
+                .Select(i => new object[] 
                 {
-                    index = i,
-                    sin = Math.Sin(i),
-                    cos = Math.Cos(i)
+                    i,
+                    Math.Sin(i),
+                    Math.Cos(i)
                 })
     		    .ToArray();
 

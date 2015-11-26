@@ -13,6 +13,9 @@ namespace Pancas
 
         IEnumerable<IRow> GetRows();
 
+        /// <summary>
+        /// Get names of the columns in the data frame.
+        /// </summary>
         IEnumerable<string> GetColumnNames();
 
         IColumn GetColumn(string columnName);

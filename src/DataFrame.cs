@@ -8,12 +8,12 @@ namespace Pancas
     public class DataFrame : IDataFrame
     {
         private string[] columnNames;
-        private object[] values;
+        private object[][] rows;
 
-        public DataFrame(string[] columnNames, object[] values)
+        public DataFrame(string[] columnNames, object[][] rows)
         {
             this.columnNames = columnNames;
-            this.values = values;
+            this.rows = rows;
         }
 
         public IDataFrameSerializer As(IDataFormatPlugin dataFormatPlugin)
@@ -36,9 +36,12 @@ namespace Pancas
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Get names of the columns in the data frame.
+        /// </summary>
         public IEnumerable<string> GetColumnNames()
         {
-            throw new NotImplementedException();
+            return columnNames;
         }
 
         public IEnumerable<IColumn> GetColumns()
@@ -48,17 +51,17 @@ namespace Pancas
 
         public IEnumerable<Tuple<T1>> GetValues<T1>()
         {
-            throw new NotImplementedException();
+            return rows.Select(row => new Tuple<T1>((T1)row[0]));
         }
 
         public IEnumerable<Tuple<T1, T2>> GetValues<T1, T2>()
         {
-            throw new NotImplementedException();
+            return rows.Select(row => new Tuple<T1, T2>((T1)row[0], (T2)row[1]));
         }
 
         public IEnumerable<Tuple<T1, T2, T3>> GetValues<T1, T2, T3>()
         {
-            throw new NotImplementedException();
+            return rows.Select(row => new Tuple<T1, T2, T3>((T1)row[0], (T2)row[1], (T3)row[2]));
         }
 
         public IEnumerable<IRow> GetRows()

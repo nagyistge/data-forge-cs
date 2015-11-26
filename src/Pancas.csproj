@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Pancas</RootNamespace>
     <AssemblyName>Pancas</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -33,6 +33,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NetLegacySupport.Tuple, Version=1.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetLegacySupport.Tuple.1.0.2\lib\net35\NetLegacySupport.Tuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RSG.Promise, Version=1.1.7.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\RSG.Promise.1.1.7.0\lib\net35\RSG.Promise.dll</HintPath>
       <Private>True</Private>
@@ -55,6 +59,7 @@
     <Compile Include="IDataFrameSerializer.cs" />
     <Compile Include="IDataSourcePlugin.cs" />
     <Compile Include="IRow.cs" />
+    <Compile Include="LinqExts.cs" />
     <Compile Include="Pancas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

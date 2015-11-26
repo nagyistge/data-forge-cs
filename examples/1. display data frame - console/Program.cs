@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace _1.display_data_frame___console
 {
@@ -15,11 +14,11 @@ namespace _1.display_data_frame___console
             // Create a simple data frame.
             //
             var values = Enumerable.Range(0, 14)
-                .Select(i => new
+                .Select(i => new object[]
                 {
-                    index = i,
-                    sin = Math.Sin(i),
-                    cos = Math.Cos(i)
+                    i,
+                    Math.Sin(i),
+                    Math.Cos(i)
                 })
                 .ToArray();
 
