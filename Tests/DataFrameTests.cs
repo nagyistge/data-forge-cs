@@ -12,27 +12,22 @@ namespace Tests
         [Fact]
         public void can_get_columns()
         {
-            var columnNames = new string[]
-            {
-                "Column1",
-                "Column2"
-            };
+            var dataFrame = new DataFrame(
+                new Column<int>("Column1", new int[0]),
+                new Column<string>("Column2", new string[0])
+            );
 
-            var dataFrame = new DataFrame(columnNames, new object[0][]);
-
+            var columnNames = new string[] { "Column1", "Column2" };
             Assert.Equal(columnNames, dataFrame.GetColumnNames());
         }
 
         [Fact]
         public void can_get_column_index()
         {
-            var columnNames = new string[]
-            {
-                "Column1",
-                "Column2"
-            };
-
-            var dataFrame = new DataFrame(columnNames, new object[0][]);
+            var dataFrame = new DataFrame(
+                new Column<int>("Column1", new int[0]),
+                new Column<string>("Column2", new string[0])
+            );
 
             Assert.Equal(0, dataFrame.GetColumnIndex("Column1"));
             Assert.Equal(1, dataFrame.GetColumnIndex("Column2"));
@@ -41,13 +36,10 @@ namespace Tests
         [Fact]
         public void can_get_index_of_non_existant_column()
         {
-            var columnNames = new string[]
-            {
-                "Column1",
-                "Column2"
-            };
-
-            var dataFrame = new DataFrame(columnNames, new object[0][]);
+            var dataFrame = new DataFrame(
+                new Column<int>("Column1", new int[0]),
+                new Column<string>("Column2", new string[0])
+            );
 
             Assert.Equal(-1, dataFrame.GetColumnIndex("non-existant-column"));
         }
@@ -73,7 +65,10 @@ namespace Tests
                 },
             };
 
-            var dataFrame = new DataFrame(columnNames, inputValues);
+            var dataFrame = new DataFrame(
+                new Column<int>("Column1", new int[] { 1, 2 }),
+                new Column<string>("Column2", new string[] { "A", "B" })
+            );
 
             var expectedValues = new Tuple<int, string>[]
             {
@@ -87,16 +82,11 @@ namespace Tests
         [Fact]
         public void can_get_values_from_set_columns()
         {
-            var columnNames = new string[]
-            {
-                "Column1",
-                "Column2"
-            };
-
             var dataFrame = new DataFrame()
                 .SetColumn<int>("Column1", new int[] { 1, 2 })
                 .SetColumn<string>("Column2", new string[] { "A", "B" });
 
+            var columnNames = new string[] { "Column1", "Column2" };
             Assert.Equal(columnNames, dataFrame.GetColumnNames());
 
             var expectedValues = new Tuple<int, string>[]
@@ -108,30 +98,14 @@ namespace Tests
             Assert.Equal(expectedValues, dataFrame.GetValues<int, string>());
         }
 
-
         [Fact]
         public void can_get_rows()
         {
-            var columnNames = new string[]
-            {
-                "Column1",
-                "Column2"
-            };
-
-            var inputValues = new object[][]
-            {
-                new object[]
-                {
-                    1, "A",
-                },
-                new object[]
-                {
-                    2, "B",
-                },
-            };
-
-            var dataFrame = new DataFrame(columnNames, inputValues);
-            var rows = dataFrame.GetRows().ToArray();
+            var dataFrame = new DataFrame(
+                new Column<int>("Column1", new int[] { 1, 2 }),
+                new Column<string>("Column2", new string[] { "A", "B" })
+            );
+            var rows = dataFrame.ToArray();
             Assert.Equal(2, rows.Length);
             Assert.Equal(1, rows[0].ByColumn<int>("Column1"));
             Assert.Equal(1, rows[0].ByColumn<int>(0));

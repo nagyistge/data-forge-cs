@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Pancas
 {
@@ -21,7 +23,7 @@ namespace Pancas
     /// <summary>
     /// Interface to a row in a data frame.
     /// </summary>
-    public struct Row : IRow
+    public struct Row : IRow 
     {
         /// <summary>
         /// The data frame that owns the row.
@@ -29,14 +31,14 @@ namespace Pancas
         private IDataFrame parentDataFrame;
 
         /// <summary>
-        /// The data in the row.
+        /// The column rows in the data frame row.
         /// </summary>
-        private object[] data;
+        private IColumnRow[] columns;
 
-        public Row(IDataFrame parentDataFrame, object[] data)
+        public Row(IDataFrame parentDataFrame, IEnumerable<IColumnRow> columns)
         {
             this.parentDataFrame = parentDataFrame;
-            this.data = data;
+            this.columns = columns.ToArray();
         }
 
         /// <summary>
@@ -52,7 +54,7 @@ namespace Pancas
         /// </summary>
         public T ByColumn<T>(int columnIndex)
         {
-            return (T)data[columnIndex]; //todo: handle bad column index
+            return columns[columnIndex].As<T>();  //todo: handle bad column index
         }
     }
 

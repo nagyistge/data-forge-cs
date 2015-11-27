@@ -5,13 +5,12 @@ using System.Text;
 
 namespace Pancas
 {
-    public interface IDataFrame
+    public interface IDataFrame : IEnumerable<IRow>
     {
+        //todo: are these even needed?
         IEnumerable<Tuple<T1>> GetValues<T1>();
         IEnumerable<Tuple<T1, T2>> GetValues<T1, T2>();
         IEnumerable<Tuple<T1, T2, T3>> GetValues<T1, T2, T3>();
-
-        IEnumerable<IRow> GetRows();
 
         /// <summary>
         /// Get names of the columns in the data frame.
@@ -30,12 +29,12 @@ namespace Pancas
 
         IDataFrame Where(Func<IRow, bool> rowPredicate);
 
-        IDataFrame SetColumn<T>(string columnName, T[] data);
+        IDataFrame SetColumn<T>(string columnName, IEnumerable<T> data);
         IDataFrame SetColumn(string columnName, IColumn column);
 
         /// <summary>
         /// Convert index of the specified column.
         /// </summary>
-        int GetColumnIndex(object columName);
+        int GetColumnIndex(string columName);
     }
 }

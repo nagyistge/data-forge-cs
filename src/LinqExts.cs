@@ -170,9 +170,9 @@ namespace Pancas
         }
 
         /// <summary>
-        /// Zip two lists into a single list.
+        /// Zip two collections into a single collection.
         /// </summary>
-        public static IEnumerable<D> Zip<T1, T2, D>(this IEnumerable<T1> list1, IEnumerable<T2> list2, Func<T1, T2, D> zipper)
+        public static IEnumerable<D> Zip<T1, T2, D>(IEnumerable<T1> list1, IEnumerable<T2> list2, Func<T1, T2, D> zipper)
         {
             var enumerator1 = list1.GetEnumerator();
             var enumerator2 = list2.GetEnumerator();
@@ -180,6 +180,21 @@ namespace Pancas
             while (enumerator1.MoveNext() && enumerator2.MoveNext())
             {
                 yield return zipper(enumerator1.Current, enumerator2.Current);
+            }
+        }
+
+        /// <summary>
+        /// Zip multiple collections into a single collection.
+        /// </summary>
+        public static IEnumerable<D> Zip<T1, T2, T3, D>(IEnumerable<T1> list1, IEnumerable<T2> list2, IEnumerable<T3> list3, Func<T1, T2, T3, D> zipper)
+        {
+            var enumerator1 = list1.GetEnumerator();
+            var enumerator2 = list2.GetEnumerator();
+            var enumerator3 = list3.GetEnumerator();
+
+            while (enumerator1.MoveNext() && enumerator2.MoveNext() && enumerator3.MoveNext())
+            {
+                yield return zipper(enumerator1.Current, enumerator2.Current, enumerator3.Current);
             }
         }
 

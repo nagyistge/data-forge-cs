@@ -25,18 +25,13 @@ namespace _1.plot
             // 
             // Create a simple data frame.
             //
-            var values = Enumerable.Range(0, 14)
-                .Select(i => new object[]
-                {
-                    new DateTime(2015, 3, i),
-                    Math.Sin(i),
-                    Math.Cos(i)
-                })
-    		    .ToArray();
-
+            var maxRange = 14;
             var indexColumnName = "index";
-            var columnNames = new string[] { indexColumnName, "Sin", "Cos" };
-            var dataFrame = new DataFrame(columnNames, values);
+            var dataFrame = new DataFrame(
+                new Column<int>(indexColumnName, Enumerable.Range(0, maxRange)),
+                new Column<double>("Sin", Enumerable.Range(0, maxRange).Select(i => Math.Sin(i))),
+                new Column<double>("Cos", Enumerable.Range(0, maxRange).Select(i => Math.Cos(i)))
+            );
 
             //
             // Plot the data frame.
@@ -56,8 +51,11 @@ namespace _1.plot
                 .Select(column =>
                 {
                     var label = column.GetName();
-                    var entries = indexValues
-                        .Zip(column.GetValues<float>(), (index, value) => new { index, value })
+                    var entries = LinqExts.Zip(
+                            indexValues, 
+                            column.GetValues<float>(), 
+                            (index, value) => new { index, value }
+                        )
                         .ToArray();
 
                     return new { label, entries };

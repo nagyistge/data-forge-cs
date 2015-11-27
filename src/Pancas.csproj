@@ -52,7 +52,8 @@
     <Compile Include="Csv.cs" />
     <Compile Include="DataFrame.cs" />
     <Compile Include="File.cs" />
-    <Compile Include="IColumn.cs" />
+    <Compile Include="Column.cs" />
+    <Compile Include="ColumnRow.cs" />
     <Compile Include="IDataFormatPlugin.cs" />
     <Compile Include="IDataFrame.cs" />
     <Compile Include="IDataFrameDeserializer.cs" />
