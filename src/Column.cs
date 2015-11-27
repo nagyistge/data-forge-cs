@@ -28,6 +28,7 @@ namespace Pancas
     /// A typed column.
     /// </summary>
     public class Column<T> : IColumn
+        where T : IConvertible
     {
         /// <summary>
         /// Name of the column.

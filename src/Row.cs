@@ -12,12 +12,14 @@ namespace Pancas
         /// <summary>
         /// Get column value by colun name.
         /// </summary>
-        T ByColumn<T>(string columnName);
+        T ByColumn<T>(string columnName)
+            where T : IConvertible;
 
         /// <summary>
         /// Get column value by column index.
         /// </summary>
-        T ByColumn<T>(int columnIndex);
+        T ByColumn<T>(int columnIndex)
+            where T : IConvertible;
     }
 
     /// <summary>
@@ -45,6 +47,7 @@ namespace Pancas
         /// Get column value by colun name.
         /// </summary>
         public T ByColumn<T>(string columnName)
+            where T : IConvertible
         {
             return ByColumn<T>(parentDataFrame.GetColumnIndex(columnName)); //todo: handle bad column name
         }
@@ -53,6 +56,7 @@ namespace Pancas
         /// Get column value by column index.
         /// </summary>
         public T ByColumn<T>(int columnIndex)
+            where T : IConvertible
         {
             return columns[columnIndex].As<T>();  //todo: handle bad column index
         }
