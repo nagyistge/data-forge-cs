@@ -105,7 +105,7 @@ namespace Tests
                 new Column<int>("Column1", new int[] { 1, 2 }),
                 new Column<string>("Column2", new string[] { "A", "B" })
             );
-            var rows = dataFrame.ToArray();
+            var rows = dataFrame.GetRows().ToArray();
             Assert.Equal(2, rows.Length);
             Assert.Equal(1, rows[0].ByColumn<int>("Column1"));
             Assert.Equal(1, rows[0].ByColumn<int>(0));

@@ -6,12 +6,17 @@ using System.Text;
 
 namespace Pancas
 {
-    public interface IDataFrame : IEnumerable<IRow>
+    public interface IDataFrame
     {
         //todo: are these even needed?
         IEnumerable<Tuple<T1>> GetValues<T1>();
         IEnumerable<Tuple<T1, T2>> GetValues<T1, T2>();
         IEnumerable<Tuple<T1, T2, T3>> GetValues<T1, T2, T3>();
+
+        /// <summary>
+        /// Retreive the rows from the data frame.
+        /// </summary>
+        IEnumerable<IRow> GetRows();
 
         /// <summary>
         /// Get names of the columns in the data frame.
@@ -76,6 +81,19 @@ namespace Pancas
         public IColumn GetColumn(string columnName)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Retreive the rows from the data frame.
+        /// </summary>
+        public IEnumerable<IRow> GetRows()
+        {
+            var enumerators = columns.Select(column => column.GetRows().GetEnumerator()).ToArray();
+
+            while (enumerators.All(enumerator => enumerator.MoveNext()))
+            {
+                yield return new Row(this, enumerators.Select(enumerator => enumerator.Current).Cast<IColumnRow>());
+            }
         }
 
         /// <summary>
@@ -160,21 +178,6 @@ namespace Pancas
             }
 
             return -1;
-        }
-
-        public IEnumerator<IRow> GetEnumerator()
-        {
-            var enumerators = columns.Select(column => column.GetEnumerator()).ToArray();
-
-            while (enumerators.All(enumerator => enumerator.MoveNext()))
-            {
-                yield return new Row(this, enumerators.Select(enumerator => enumerator.Current).Cast<IColumnRow>());
-            }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
         }
     }
 }

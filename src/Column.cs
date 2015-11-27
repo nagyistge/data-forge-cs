@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Pancas
 {
-    public interface IColumn : IEnumerable<IColumnRow>
+    public interface IColumn
     {
         /// <summary>
         /// Get the name of the column.
@@ -17,6 +17,11 @@ namespace Pancas
         /// Get the values of the column.
         /// </summary>
         IEnumerable<T> GetValues<T>();
+
+        /// <summary>
+        /// Get the rows from the column.
+        /// </summary>
+        IEnumerable<IColumnRow> GetRows();
     }
 
     /// <summary>
@@ -40,12 +45,14 @@ namespace Pancas
             this.values = values.ToArray();
         }
 
-        public IEnumerator<IColumnRow> GetEnumerator()
+        /// <summary>
+        /// Get the rows from the column.
+        /// </summary>
+        public IEnumerable<IColumnRow> GetRows()
         {
             return values
                 .Select(value => new ColumnRow<T>(value))
-                .Cast<IColumnRow>()
-                .GetEnumerator();
+                .Cast<IColumnRow>();
         }
 
         /// <summary>
@@ -62,11 +69,6 @@ namespace Pancas
         public IEnumerable<TT> GetValues<TT>()
         {
             return values.Cast<TT>();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return values.GetEnumerator();
         }
     }
 }
