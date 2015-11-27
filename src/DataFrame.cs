@@ -92,7 +92,12 @@ namespace Pancas
 
             while (enumerators.All(enumerator => enumerator.MoveNext()))
             {
-                yield return new Row(this, enumerators.Select(enumerator => enumerator.Current).Cast<IColumnRow>());
+                yield return new Row(
+                    this, 
+                    enumerators
+                        .Select(enumerator => enumerator.Current)
+                        .Cast<IColumnRow>()
+                );
             }
         }
 
