@@ -55,7 +55,6 @@
     <Compile Include="Column.cs" />
     <Compile Include="ColumnRow.cs" />
     <Compile Include="IDataFormatPlugin.cs" />
-    <Compile Include="IDataFrame.cs" />
     <Compile Include="IDataFrameDeserializer.cs" />
     <Compile Include="IDataFrameSerializer.cs" />
     <Compile Include="IDataSourcePlugin.cs" />
