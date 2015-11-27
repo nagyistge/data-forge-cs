@@ -36,7 +36,7 @@ namespace Pancas
         public TT As<TT>()
             where TT: IConvertible
         {
-            return (TT)value.ToType(typeof(TT), null);
+            return (TT)(object)value;
         }
     }
 }
