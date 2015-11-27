@@ -10,6 +10,11 @@ namespace Pancas
         private string[] columnNames;
         private object[][] rows;
 
+        public DataFrame()
+        {
+
+        }
+
         public DataFrame(string[] columnNames, object[][] rows)
         {
             this.columnNames = columnNames;
@@ -80,6 +85,16 @@ namespace Pancas
         }
 
         new public string ToString()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDataFrame SetColumn<T>(string columnName, T[] data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDataFrame SetColumn(string columnName, IColumn column)
         {
             throw new NotImplementedException();
         }

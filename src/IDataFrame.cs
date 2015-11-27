@@ -30,6 +30,9 @@ namespace Pancas
 
         IDataFrame Where(Func<IRow, bool> rowPredicate);
 
+        IDataFrame SetColumn<T>(string columnName, T[] data);
+        IDataFrame SetColumn(string columnName, IColumn column);
+
         /// <summary>
         /// Convert index of the specified column.
         /// </summary>
