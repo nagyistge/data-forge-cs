@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. plot - with dates", "exa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. display data frame - console", "examples\1. display data frame - console\1. display data frame - console.csproj", "{C79A819B-6E62-48EA-A9CB-C4033E781898}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D1894593-7570-4D2C-9DDE-F80F11C67332}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoxingPerformanceTest", "test\BoxingPerformanceTest\BoxingPerformanceTest.csproj", "{B4A8024A-1AEC-4F5A-BAD3-7C650EBBFA37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +51,10 @@ Global
 		{C79A819B-6E62-48EA-A9CB-C4033E781898}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C79A819B-6E62-48EA-A9CB-C4033E781898}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C79A819B-6E62-48EA-A9CB-C4033E781898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A8024A-1AEC-4F5A-BAD3-7C650EBBFA37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A8024A-1AEC-4F5A-BAD3-7C650EBBFA37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A8024A-1AEC-4F5A-BAD3-7C650EBBFA37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A8024A-1AEC-4F5A-BAD3-7C650EBBFA37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,5 +64,6 @@ Global
 		{08C730CD-325C-4E2F-8C68-912422283B5D} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
 		{C70BB265-C29A-4BBC-A976-61745AB46EA1} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
 		{C79A819B-6E62-48EA-A9CB-C4033E781898} = {1B11A78A-0750-4F9E-8913-BE768801AB60}
+		{B4A8024A-1AEC-4F5A-BAD3-7C650EBBFA37} = {D1894593-7570-4D2C-9DDE-F80F11C67332}
 	EndGlobalSection
 EndGlobal
