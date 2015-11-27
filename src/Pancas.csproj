@@ -58,7 +58,7 @@
     <Compile Include="IDataFrameDeserializer.cs" />
     <Compile Include="IDataFrameSerializer.cs" />
     <Compile Include="IDataSourcePlugin.cs" />
-    <Compile Include="IRow.cs" />
+    <Compile Include="Row.cs" />
     <Compile Include="LinqExts.cs" />
     <Compile Include="Pancas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

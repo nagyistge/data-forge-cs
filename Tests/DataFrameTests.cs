@@ -24,6 +24,35 @@ namespace Tests
         }
 
         [Fact]
+        public void can_get_column_index()
+        {
+            var columnNames = new string[]
+            {
+                "Column1",
+                "Column2"
+            };
+
+            var dataFrame = new DataFrame(columnNames, new object[0][]);
+
+            Assert.Equal(0, dataFrame.GetColumnIndex("Column1"));
+            Assert.Equal(1, dataFrame.GetColumnIndex("Column2"));
+        }
+
+        [Fact]
+        public void can_get_index_of_non_existant_column()
+        {
+            var columnNames = new string[]
+            {
+                "Column1",
+                "Column2"
+            };
+
+            var dataFrame = new DataFrame(columnNames, new object[0][]);
+
+            Assert.Equal(-1, dataFrame.GetColumnIndex("non-existant-column"));
+        }
+
+        [Fact]
         public void can_get_values()
         {
             var columnNames = new string[]
@@ -54,5 +83,41 @@ namespace Tests
 
             Assert.Equal(expectedValues, dataFrame.GetValues<int, string>());
         }
+
+        [Fact]
+        public void can_get_rows()
+        {
+            var columnNames = new string[]
+            {
+                "Column1",
+                "Column2"
+            };
+
+            var inputValues = new object[][]
+            {
+                new object[]
+                {
+                    1, "A",
+                },
+                new object[]
+                {
+                    2, "B",
+                },
+            };
+
+            var dataFrame = new DataFrame(columnNames, inputValues);
+            var rows = dataFrame.GetRows().ToArray();
+            Assert.Equal(2, rows.Length);
+            Assert.Equal(1, rows[0].ByColumn<int>("Column1"));
+            Assert.Equal(1, rows[0].ByColumn<int>(0));
+            Assert.Equal("A", rows[0].ByColumn<string>("Column2"));
+            Assert.Equal("A", rows[0].ByColumn<string>(1));
+
+            Assert.Equal(2, rows[1].ByColumn<int>("Column1"));
+            Assert.Equal(2, rows[1].ByColumn<int>(0));
+            Assert.Equal("B", rows[1].ByColumn<string>("Column2"));
+            Assert.Equal("B", rows[1].ByColumn<string>(1));
+        }
+
     }
 }

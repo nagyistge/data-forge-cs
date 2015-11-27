@@ -66,7 +66,7 @@ namespace Pancas
 
         public IEnumerable<IRow> GetRows()
         {
-            throw new NotImplementedException();
+            return rows.Select(row => new Row(this, row)).Cast<IRow>();
         }
 
         public IDataFrame GetColumnsSubset(IEnumerable<string> columnNames)
@@ -82,6 +82,15 @@ namespace Pancas
         new public string ToString()
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Convert index of the specified column.
+        /// Returns -1 if the requested column doesn't exist.
+        /// </summary>
+        public int GetColumnIndex(object requestedColumnName)
+        {
+            return columnNames.IndexOf(requestedColumnName);
         }
     }
 }

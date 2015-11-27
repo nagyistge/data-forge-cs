@@ -29,5 +29,10 @@ namespace Pancas
         IDataFrame GetColumnsSubset(IEnumerable<string> columnNames);
 
         IDataFrame Where(Func<IRow, bool> rowPredicate);
+
+        /// <summary>
+        /// Convert index of the specified column.
+        /// </summary>
+        int GetColumnIndex(object columName);
     }
 }
