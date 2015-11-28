@@ -12,14 +12,12 @@ namespace Pancas
         /// <summary>
         /// Get column value by colun name.
         /// </summary>
-        T ByColumn<T>(string columnName)
-            where T : IConvertible;
+        IColumnRow ByColumn(string columnName);
 
         /// <summary>
         /// Get column value by column index.
         /// </summary>
-        T ByColumn<T>(int columnIndex)
-            where T : IConvertible;
+        IColumnRow ByColumn(int columnIndex);
     }
 
     /// <summary>
@@ -46,19 +44,17 @@ namespace Pancas
         /// <summary>
         /// Get column value by colun name.
         /// </summary>
-        public T ByColumn<T>(string columnName)
-            where T : IConvertible
+        public IColumnRow ByColumn(string columnName)
         {
-            return ByColumn<T>(parentDataFrame.GetColumnIndex(columnName)); //todo: handle bad column name
+            return ByColumn(parentDataFrame.GetColumnIndex(columnName)); //todo: handle bad column name
         }
 
         /// <summary>
         /// Get column value by column index.
         /// </summary>
-        public T ByColumn<T>(int columnIndex)
-            where T : IConvertible
+        public IColumnRow ByColumn(int columnIndex)
         {
-            return columns[columnIndex].As<T>();  //todo: handle bad column index
+            return columns[columnIndex];  //todo: handle bad column index
         }
     }
 

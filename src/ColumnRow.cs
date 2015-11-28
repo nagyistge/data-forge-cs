@@ -10,15 +10,13 @@ namespace Pancas
         /// <summary>
         /// Retrieve the value in the row.
         /// </summary>
-        T As<T>()
-            where T : IConvertible;
+        T As<T>();
     }
 
     /// <summary>
     /// Represents a row in a column.
     /// </summary>
     public struct ColumnRow<T> : IColumnRow
-        where T : IConvertible
     {
         /// <summary>
         /// The value in this row of the column.
@@ -34,7 +32,6 @@ namespace Pancas
         /// Retrieve the value in the row.
         /// </summary>
         public TT As<TT>()
-            where TT: IConvertible
         {
             return (TT)(object)value;
         }

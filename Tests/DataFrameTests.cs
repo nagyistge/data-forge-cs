@@ -107,15 +107,15 @@ namespace Tests
             );
             var rows = dataFrame.GetRows().ToArray();
             Assert.Equal(2, rows.Length);
-            Assert.Equal(1, rows[0].ByColumn<int>("Column1"));
-            Assert.Equal(1, rows[0].ByColumn<int>(0));
-            Assert.Equal("A", rows[0].ByColumn<string>("Column2"));
-            Assert.Equal("A", rows[0].ByColumn<string>(1));
+            Assert.Equal(1, rows[0].ByColumn("Column1").As<int>());
+            Assert.Equal(1, rows[0].ByColumn(0).As<int>());
+            Assert.Equal("A", rows[0].ByColumn("Column2").As<string>());
+            Assert.Equal("A", rows[0].ByColumn(1).As<string>());
 
-            Assert.Equal(2, rows[1].ByColumn<int>("Column1"));
-            Assert.Equal(2, rows[1].ByColumn<int>(0));
-            Assert.Equal("B", rows[1].ByColumn<string>("Column2"));
-            Assert.Equal("B", rows[1].ByColumn<string>(1));
+            Assert.Equal(2, rows[1].ByColumn("Column1").As<int>());
+            Assert.Equal(2, rows[1].ByColumn(0).As<int>());
+            Assert.Equal("B", rows[1].ByColumn("Column2").As<string>());
+            Assert.Equal("B", rows[1].ByColumn(1).As<string>());
         }
 
     }
