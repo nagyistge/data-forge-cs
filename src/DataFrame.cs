@@ -31,12 +31,19 @@ namespace Pancas
         IEnumerable<IColumn> GetColumns();
 
         IDataFrame DropColumn(string columnName);
+        IDataFrame DropColumn(int columnIndex);
+
         IDataFrame GetColumnsSubset(IEnumerable<string> columnNames);
+        IDataFrame GetColumnsSubset(IEnumerable<int> columnIndices);
+
+        IDataFrame GetRowsSubset(int start, int count);
 
         IDataFrame Where(Func<IRow, bool> rowPredicate);
 
         IDataFrame SetColumn<T>(string columnName, IEnumerable<T> data);
         IDataFrame SetColumn(string columnName, IColumn column);
+        IDataFrame SetColumn<T>(int columnIndex, IEnumerable<T> data);
+        IDataFrame SetColumn(int columnIndex, IColumn column);
 
         /// <summary>
         /// Convert index of the specified column.
@@ -69,6 +76,11 @@ namespace Pancas
         }
 
         public IDataFrame DropColumn(string columnName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDataFrame DropColumn(int columnIndex)
         {
             throw new NotImplementedException();
         }
@@ -140,7 +152,17 @@ namespace Pancas
             );
         }
 
-       public IDataFrame GetColumnsSubset(IEnumerable<string> columnNames)
+        public IDataFrame GetColumnsSubset(IEnumerable<string> columnNames)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDataFrame GetColumnsSubset(IEnumerable<int> columnIndices)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDataFrame GetRowsSubset(int start, int count)
         {
             throw new NotImplementedException();
         }
@@ -161,6 +183,16 @@ namespace Pancas
         }
 
         public IDataFrame SetColumn(string columnName, IColumn column)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDataFrame SetColumn<T>(int columnIndex, IEnumerable<T> data)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDataFrame SetColumn(int columnIndex, IColumn column)
         {
             throw new NotImplementedException();
         }
