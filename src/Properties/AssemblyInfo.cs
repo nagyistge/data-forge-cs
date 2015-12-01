@@ -7,8 +7,8 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("Data-Forge")]
 [assembly: AssemblyDescription("C# data transformation and analysis toolkit inspired by Pandas and LINQ.")]
-[assembly: AssemblyConfiguration("Real Serious Games")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Real Serious Games")]
 [assembly: AssemblyProduct("Data-Forge")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
