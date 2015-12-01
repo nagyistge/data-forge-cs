@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Data-Forge")]
+[assembly: AssemblyTitle("DataForge")]
 [assembly: AssemblyDescription("C# data transformation and analysis toolkit inspired by Pandas and LINQ.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Real Serious Games")]
-[assembly: AssemblyProduct("Data-Forge")]
+[assembly: AssemblyProduct("DataForge")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
