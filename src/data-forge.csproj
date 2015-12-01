@@ -60,7 +60,6 @@
     <Compile Include="IDataSourcePlugin.cs" />
     <Compile Include="Row.cs" />
     <Compile Include="LinqExts.cs" />
-    <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

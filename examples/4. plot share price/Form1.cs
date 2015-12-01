@@ -1,4 +1,4 @@
-﻿using Pancas;
+﻿using DataForge;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,9 +23,9 @@ namespace _1.plot
         {
             chart1.Series.Clear();
 
-            Pancas.Pancas
-                .From(new Pancas.DataSource.File("share_prices.csv"))
-                .As(new Pancas.DataFormat.Csv())
+            DataFrame
+                .From(new File("share_prices.csv"))
+                .As(new Csv())
                 .Then(dataFrame =>
                 {
                     Plot("Date", "Close", dataFrame);

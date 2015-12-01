@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Pancas
+namespace DataForge
 {
     public interface IDataFrame
     {
@@ -53,6 +53,11 @@ namespace Pancas
 
     public class DataFrame : IDataFrame
     {
+        public static IDataFrameDeserializer From(IDataSourcePlugin dataSourcePlugin)
+        {
+            throw new NotImplementedException();
+        }
+
         private IColumn[] columns;
 
         public DataFrame()

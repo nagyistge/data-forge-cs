@@ -1,6 +1,6 @@
 ﻿using RSG;
 
-namespace Pancas
+namespace DataForge
 {
     public interface IDataFrameSerializer
     {

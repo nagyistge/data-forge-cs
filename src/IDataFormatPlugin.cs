@@ -1,4 +1,4 @@
-﻿namespace Pancas
+﻿namespace DataForge
 {
     public interface IDataFormatPlugin
     {

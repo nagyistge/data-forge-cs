@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Pancas
+namespace DataForge
 {
     /// <summary>
     /// General extensions to LINQ.

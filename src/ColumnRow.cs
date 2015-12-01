@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Pancas
+namespace DataForge
 {
     /// <summary>
     /// Represents a row in a column.

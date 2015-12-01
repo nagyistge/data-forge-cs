@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Pancas
+namespace DataForge
 {
     /// <summary>
     /// Interface to a row in a data frame.
