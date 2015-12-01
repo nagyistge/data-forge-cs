@@ -26,7 +26,7 @@ The principles that drive decision making and tradeoffs:
 
 - Simple, easy to learn, easy to use.
 - High performance.
-- Be able to use the same (or very similar API in both Javascript and C#).
+- Be able to use the same (or very similar) API in both Javascript and C#.
 
 ## Implementation
 

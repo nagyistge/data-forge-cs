@@ -69,9 +69,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\Pancas.csproj">
+    <ProjectReference Include="..\src\data-forge.csproj">
       <Project>{04269025-76ec-4d44-ac39-6e0bb21cb0ce}</Project>
-      <Name>Pancas</Name>
+      <Name>data-forge</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

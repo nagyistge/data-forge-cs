@@ -92,9 +92,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Pancas.csproj">
+    <ProjectReference Include="..\..\src\data-forge.csproj">
       <Project>{04269025-76ec-4d44-ac39-6e0bb21cb0ce}</Project>
-      <Name>Pancas</Name>
+      <Name>data-forge</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
