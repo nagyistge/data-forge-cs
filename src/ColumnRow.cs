@@ -11,6 +11,11 @@ namespace DataForge
         /// Retrieve the value in the row.
         /// </summary>
         T As<T>();
+
+        /// <summary>
+        /// Convert the value to a string.
+        /// </summary>
+        new string ToString();
     }
 
     /// <summary>
@@ -34,6 +39,14 @@ namespace DataForge
         public TT As<TT>()
         {
             return (TT)(object)value;
+        }
+
+        /// <summary>
+        /// Convert the value to a string.
+        /// </summary>
+        new public string ToString()
+        {
+            return value.ToString();
         }
     }
 }

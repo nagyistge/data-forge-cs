@@ -195,7 +195,38 @@ namespace DataForge
 
         new public string ToString()
         {
-            throw new NotImplementedException();
+            var buffer = new StringBuilder();
+            buffer.AppendLine(columns.Select(column => column.GetName()).Join(" | "));
+
+            var rowEnumerators = columns
+                .Select(column => column.GetRows())
+                .Select(rows => rows.GetEnumerator())
+                .ToArray();
+
+            for (;;)
+            {
+                var columnsComplete = rowEnumerators
+                    .Select(rowEnumerator => rowEnumerator.MoveNext())
+                    .Select(moreItems => !moreItems)
+                    .ToArray();
+
+                if (columnsComplete.All(columnComplete => columnComplete))
+                {
+                    break;
+                }
+
+                var cells = rowEnumerators
+                    .Select((rowEnumerator, columnIndex) => 
+                        columnsComplete[columnIndex] ?
+                            string.Empty :
+                            rowEnumerator.Current.ToString()
+                    )
+                    .ToArray();
+
+                buffer.AppendLine(cells.Join(" | "));
+            }
+
+            return buffer.ToString();
         }
 
         public IDataFrame SetColumn<T>(string columnName, IEnumerable<T> data)
