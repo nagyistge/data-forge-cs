@@ -26,8 +26,6 @@ namespace DataForge
         IColumn GetColumn(string columnName);
         IColumn GetColumn(int columnIndex);
 
-        IDataFrameSerializer As(IDataFormatPlugin dataFormatPlugin);
-
         IEnumerable<IColumn> GetColumns();
 
         IDataFrame DropColumn(string columnName);
@@ -49,20 +47,43 @@ namespace DataForge
         /// Convert index of the specified column.
         /// </summary>
         int GetColumnIndex(string columName);
+
+        /// <summary>
+        /// Convert the data frame to CSV.
+        /// </summary>
+        string ToCSV();
+
+        /// <summary>
+        /// Convert the data frame to JSON.
+        /// </summary>
+        string ToJSON();
     }
 
     public class DataFrame : IDataFrame
     {
-        public static IDataFrameDeserializer From(IDataSourcePlugin dataSourcePlugin)
+        /// <summary>
+        /// Columns within the data frame.
+        /// </summary>
+        private IColumn[] columns;
+
+        /// <summary>
+        /// Load a data frame from CSV.
+        /// </summary>
+        public static IDataFrame FromCSV(string csv)
         {
             throw new NotImplementedException();
         }
 
-        private IColumn[] columns;
+        /// <summary>
+        /// Load a data frame from json.
+        /// </summary>
+        public static IDataFrame FromJSON(string json)
+        {
+            throw new NotImplementedException();
+        }
 
         public DataFrame()
         {
-
         }
 
         public DataFrame(IEnumerable<IColumn> columns)
@@ -73,11 +94,6 @@ namespace DataForge
         public DataFrame(params IColumn[] columns)
         {
             this.columns = columns;
-        }
-
-        public IDataFrameSerializer As(IDataFormatPlugin dataFormatPlugin)
-        {
-            throw new NotImplementedException();
         }
 
         public IDataFrame DropColumn(string columnName)
@@ -220,6 +236,16 @@ namespace DataForge
             }
 
             return -1;
+        }
+
+        public string ToCSV()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string ToJSON()
+        {
+            throw new NotImplementedException();
         }
     }
 }

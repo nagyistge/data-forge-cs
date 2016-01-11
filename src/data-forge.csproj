@@ -49,15 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Csv.cs" />
     <Compile Include="DataFrame.cs" />
-    <Compile Include="File.cs" />
     <Compile Include="Column.cs" />
     <Compile Include="ColumnRow.cs" />
-    <Compile Include="IDataFormatPlugin.cs" />
-    <Compile Include="IDataFrameDeserializer.cs" />
-    <Compile Include="IDataFrameSerializer.cs" />
-    <Compile Include="IDataSourcePlugin.cs" />
     <Compile Include="Row.cs" />
     <Compile Include="LinqExts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

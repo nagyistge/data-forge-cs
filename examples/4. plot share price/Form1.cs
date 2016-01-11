@@ -1,5 +1,6 @@
 ﻿using DataForge;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,13 +24,8 @@ namespace _1.plot
         {
             chart1.Series.Clear();
 
-            DataFrame
-                .From(new File("share_prices.csv"))
-                .As(new Csv())
-                .Then(dataFrame =>
-                {
-                    Plot("Date", "Close", dataFrame);
-                });
+            var dataFrame = DataFrame.FromCSV(File.ReadAllText("share_prices.csv"));
+            Plot("Date", "Close", dataFrame);
         }
 
         /// <summary>
