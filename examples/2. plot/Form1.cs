@@ -28,9 +28,9 @@ namespace _1.plot
             var maxRange = 14;
             var indexColumnName = "index";
             var dataFrame = new DataFrame(
-                new Column<int>(indexColumnName, Enumerable.Range(0, maxRange)),
-                new Column<double>("Sin", Enumerable.Range(0, maxRange).Select(i => Math.Sin(i))),
-                new Column<double>("Cos", Enumerable.Range(0, maxRange).Select(i => Math.Cos(i)))
+                new IntColumn(indexColumnName, Enumerable.Range(0, maxRange)),
+                new DoubleColumn("Sin", Enumerable.Range(0, maxRange).Select(i => Math.Sin(i))),
+                new DoubleColumn("Cos", Enumerable.Range(0, maxRange).Select(i => Math.Cos(i)))
             );
 
             //
@@ -44,7 +44,7 @@ namespace _1.plot
         /// </summary>
         private void Plot(string indexColumnName, IDataFrame dataFrame)
         {
-            var indexValues = dataFrame.GetColumn(indexColumnName).GetValues<int>();
+            var indexValues = dataFrame.GetColumn(indexColumnName).AsInt().ToValues();
             var remainingColumns = dataFrame.DropColumn("index").GetColumns();
 
             var allSeriesData = remainingColumns
@@ -53,7 +53,7 @@ namespace _1.plot
                     var label = column.GetName();
                     var entries = LinqExts.Zip(
                             indexValues,
-                            column.GetValues<float>(),
+                            column.AsFloat().ToValues(),
                             (index, value) => new { index, value }
                         )
                         .ToArray();

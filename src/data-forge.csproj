@@ -50,11 +50,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataFrame.cs" />
-    <Compile Include="Column.cs" />
-    <Compile Include="ColumnRow.cs" />
+    <Compile Include="DateColumn.cs" />
+    <Compile Include="DoubleColumn.cs" />
+    <Compile Include="IntColumn.cs" />
+    <Compile Include="FloatColumn.cs" />
+    <Compile Include="IColumn.cs" />
+    <Compile Include="IColumnValue.cs" />
+    <Compile Include="IFloatValue.cs" />
+    <Compile Include="IStringValue.cs" />
     <Compile Include="Row.cs" />
     <Compile Include="LinqExts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringColumn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="data-forge.nuspec" />

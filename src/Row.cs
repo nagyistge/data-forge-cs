@@ -12,12 +12,12 @@ namespace DataForge
         /// <summary>
         /// Get column value by colun name.
         /// </summary>
-        IColumnRow ByColumn(string columnName);
+        IColumnValue ByColumn(string columnName);
 
         /// <summary>
         /// Get column value by column index.
         /// </summary>
-        IColumnRow ByColumn(int columnIndex);
+        IColumnValue ByColumn(int columnIndex);
     }
 
     /// <summary>
@@ -33,9 +33,9 @@ namespace DataForge
         /// <summary>
         /// The column rows in the data frame row.
         /// </summary>
-        private IColumnRow[] columns;
+        private IColumnValue[] columns;
 
-        public Row(IDataFrame parentDataFrame, IEnumerable<IColumnRow> columns)
+        public Row(IDataFrame parentDataFrame, IEnumerable<IColumnValue> columns)
         {
             this.parentDataFrame = parentDataFrame;
             this.columns = columns.ToArray();
@@ -44,7 +44,7 @@ namespace DataForge
         /// <summary>
         /// Get column value by colun name.
         /// </summary>
-        public IColumnRow ByColumn(string columnName)
+        public IColumnValue ByColumn(string columnName)
         {
             return ByColumn(parentDataFrame.GetColumnIndex(columnName)); //todo: handle bad column name
         }
@@ -52,7 +52,7 @@ namespace DataForge
         /// <summary>
         /// Get column value by column index.
         /// </summary>
-        public IColumnRow ByColumn(int columnIndex)
+        public IColumnValue ByColumn(int columnIndex)
         {
             return columns[columnIndex];  //todo: handle bad column index
         }

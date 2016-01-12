@@ -5,19 +5,15 @@ namespace DataForge
     /// <summary>
     /// Represents a row in a column.
     /// </summary>
-    public interface IColumnRow
+    public interface IColumnValue
     {
         /// <summary>
-        /// Retrieve the value in the row.
+        /// Interpret the column value as a string.
         /// </summary>
-        T As<T>();
-
-        /// <summary>
-        /// Convert the value to a string.
-        /// </summary>
-        new string ToString();
+        IStringValue AsString();
     }
 
+    /*fio:
     /// <summary>
     /// Represents a row in a column.
     /// </summary>
@@ -49,4 +45,5 @@ namespace DataForge
             return value.ToString();
         }
     }
+    */
 }

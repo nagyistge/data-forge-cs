@@ -38,9 +38,7 @@ namespace DataForge
 
         IDataFrame Where(Func<IRow, bool> rowPredicate);
 
-        IDataFrame SetColumn<T>(string columnName, IEnumerable<T> data);
         IDataFrame SetColumn(string columnName, IColumn column);
-        IDataFrame SetColumn<T>(int columnIndex, IEnumerable<T> data);
         IDataFrame SetColumn(int columnIndex, IColumn column);
 
         /// <summary>
@@ -121,7 +119,14 @@ namespace DataForge
         /// </summary>
         public IEnumerable<IRow> GetRows()
         {
-            var enumerators = columns.Select(column => column.GetRows().GetEnumerator()).ToArray();
+            /*todo:
+            var enumerators = columns
+                .Select(column => 
+                    column.AsString()
+                    .ToValues()
+                    .GetEnumerator()
+                )
+                .ToArray();
 
             while (enumerators.All(enumerator => enumerator.MoveNext()))
             {
@@ -129,9 +134,11 @@ namespace DataForge
                     this, 
                     enumerators
                         .Select(enumerator => enumerator.Current)
-                        .Cast<IColumnRow>()
+                        .Cast<IColumnValue>()
                 );
             }
+            */
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -149,28 +156,37 @@ namespace DataForge
 
         public IEnumerable<Tuple<T1>> GetValues<T1>()
         {
+            throw new NotImplementedException();
+            /*todo:
             return columns[0]
                 .GetValues<T1>()
                 .Select(value => new Tuple<T1>(value));
+                */
         }
 
         public IEnumerable<Tuple<T1, T2>> GetValues<T1, T2>()
         {
+            throw new NotImplementedException();
+            /*todo:
             return LinqExts.Zip(
                 columns[0].GetValues<T1>(), 
                 columns[1].GetValues<T2>(), 
                 (v1, v2) => new Tuple<T1, T2>(v1, v2)
             );
+            */
         }
 
         public IEnumerable<Tuple<T1, T2, T3>> GetValues<T1, T2, T3>()
         {
+            throw new NotImplementedException();
+            /*todo:
             return LinqExts.Zip(
                 columns[0].GetValues<T1>(),
                 columns[1].GetValues<T2>(),
                 columns[2].GetValues<T3>(),
                 (v1, v2, v3) => new Tuple<T1, T2, T3>(v1, v2, v3)
             );
+            */
         }
 
         public IDataFrame GetColumnsSubset(IEnumerable<string> columnNames)
@@ -199,7 +215,7 @@ namespace DataForge
             buffer.AppendLine(columns.Select(column => column.GetName()).Join(" | "));
 
             var rowEnumerators = columns
-                .Select(column => column.GetRows())
+                .Select(column => column.AsString().ToValues())
                 .Select(rows => rows.GetEnumerator())
                 .ToArray();
 
@@ -229,17 +245,7 @@ namespace DataForge
             return buffer.ToString();
         }
 
-        public IDataFrame SetColumn<T>(string columnName, IEnumerable<T> data)
-        {
-            throw new NotImplementedException();
-        }
-
         public IDataFrame SetColumn(string columnName, IColumn column)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IDataFrame SetColumn<T>(int columnIndex, IEnumerable<T> data)
         {
             throw new NotImplementedException();
         }

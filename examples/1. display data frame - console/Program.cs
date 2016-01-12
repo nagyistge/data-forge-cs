@@ -15,9 +15,9 @@ namespace _1.display_data_frame___console
             //
             var maxRange = 14;
             var dataFrame = new DataFrame(
-                new Column<int>("index", Enumerable.Range(0, maxRange)),
-                new Column<double>("Sin", Enumerable.Range(0, maxRange).Select(i => Math.Sin(i))),
-                new Column<double>("Cos", Enumerable.Range(0, maxRange).Select(i => Math.Cos(i)))
+                new IntColumn("index", Enumerable.Range(0, maxRange)),
+                new DoubleColumn("Sin", Enumerable.Range(0, maxRange).Select(i => Math.Sin(i))),
+                new DoubleColumn("Cos", Enumerable.Range(0, maxRange).Select(i => Math.Cos(i)))
             );
 
             Console.WriteLine(dataFrame.ToString());
