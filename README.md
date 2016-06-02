@@ -1,12 +1,18 @@
 # data-forge
 
+---------
+
 C# data transformation and analysis toolkit inspired by Pandas and LINQ.
 
 Designed to work under .Net 3.5 so that it can be used with the [Unity game engine](https://en.wikipedia.org/wiki/Unity_(game_engine)).
 
-[Also available for JavaScript](https://github.com/Real-Serious-Games/data-forge-js).
+----------
 
-The JavaScript versions is far more advanced the than C# version. Please check there to see where we are at.
+Apologies to anyone who wants to use this, it isn't going anywhere quickly.
+
+The [JavaScript version](https://github.com/data-forge/data-forge-js) has taken all my time so far. It is quite advanced but the C# version is barely stared.
+
+If anyone wants to work on the C# version please let me know.
 
 ----------
 
